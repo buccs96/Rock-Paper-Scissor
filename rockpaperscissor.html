@@ -1,0 +1,60 @@
+<html>
+
+<script>
+
+    
+    function computerSelection (){
+        let optionsPossible = ["rock","paper","scissors"];
+        let optionComputer = optionsPossible[Math.floor(Math.random()*3)];
+        return optionComputer;
+        }
+
+        var pickedComputer = computerSelection();
+        
+    function playerSelection () {
+        let option = prompt("Pick between: rock, scissors and paper");
+        let optionHuman = option.toLowerCase();
+        return optionHuman;
+        }
+
+        var pickedPlayer = playerSelection();
+       
+
+   function oneGame() {
+
+        if ((pickedPlayer == "rock" && pickedComputer == "paper")) {
+            console.log("Computer picked " + pickedComputer);
+            console.log("Rock loses!");
+            
+        } else if ((pickedPlayer == "rock" && pickedComputer == "scissor")) {
+            console.log("Computer picked " + pickedComputer);
+            console.log("Rock wins!");
+            
+        } else if ((pickedPlayer == "paper" && pickedComputer == "scissor")) {
+            console.log("Computer picked " + pickedComputer);
+            console.log("Paper loses!");
+            
+        } else if ((pickedPlayer == "paper" && pickedComputer == "rock")) {
+            console.log("Computer picked " + pickedComputer);
+            console.log("Paper wins!");
+            
+        } else if ((pickedPlayer == "scissor" && pickedComputer == "paper")) {
+            console.log("Computer picked " + pickedComputer);
+            console.log("Scissor wins!");
+            
+        } else if ((pickedPlayer == "scissor" && pickedComputer == "rock")) {
+            console.log("Computer picked " + pickedComputer);
+            console.log("Scissor loses!");
+           
+        } else if ((pickedPlayer === pickedComputer)) {
+            console.log("Computer picked " + pickedComputer);
+            console.log("Draw!")
+            
+        } 
+    }
+
+    oneGame();
+
+</script>
+
+</html>

@@ -1,0 +1,95 @@
+<html>
+
+<script>
+
+
+    /* 
+    The function computerSelection below didn't let me print the actual name of what was picked. Ex.:
+    ''"Computer picked 3 , you lose!"
+   
+     
+        function computerSelection (){
+        let rock = 1;
+        let paper = 2;
+        let scissor = 3;
+        let optionsPossible = [rock ,paper , scissor];
+        let optionComputer = optionsPossible[Math.floor(Math.random()*3)];
+        return optionComputer;
+        }
+        */
+
+        /* This one did! Thanks for the suggestion r/b.allergy!*/
+
+    function computerSelection (){
+        
+        let optionsPossible = ["rock" , "paper" , "scissor"];
+        optionsPossible[0] = "rock";
+        optionsPossible[1] = "paper";
+        optionsPossible[2] = "scissor";  
+        let optionComputer = optionsPossible[Math.floor(Math.random()*3)];
+        return optionComputer;
+        }
+
+
+    function playerSelection () {
+        let pickedPlayer = prompt("Pick between: rock, scissor and paper");
+        let x = "rock";
+        let y = "paper";
+        let z = "scissor"
+        if ((pickedPlayer == "rock")) {
+            pickedPlayer = x;
+        } else if ((pickedPlayer == "scissor")) {
+            pickedPlayer = z;
+        } else if ((pickedPlayer == "paper")) {
+            pickedPlayer = y;
+        } else {
+            alert("Choose between: rock, scissor, paper");
+        }
+        return pickedPlayer;
+        }
+        
+        let playerHuman = playerSelection();
+        let playerComputer = computerSelection(); 
+        
+ 
+/* Same reddit user suggested this type of if construct, the code is way shorter now!*/
+
+   function oneGame(){
+
+    if ((playerHuman == playerComputer)) {
+           console.log("Draw!")
+        } else if (   ((playerHuman == "rock" && playerComputer == "scissor"))|| ((playerHuman == "paper" && playerComputer == "rock")) || ((playerHuman == "scissor" && playerComputer == "paper")))  {
+            console.log("Computer picked " + playerComputer +" , you win!")
+        } else {
+            console.log("Computer picked " + playerComputer +" , you lose!")
+        }
+        
+    }
+    
+oneGame();
+
+/* Basically the V1 of the exercise, but with numbers! */
+ /*  
+
+function oneGame () {
+
+if ((playerHuman == 1 && playerComputer == 2)) {
+    console.log("Computer picked paper, you lose!")
+} else if ((playerHuman == 1 && playerComputer == 3)) {
+    console.log("Computer picked scissor, you win!")
+} else if ((playerHuman == 2 && playerComputer == 1)) {
+    console.log("Computer picked rock, you win!")
+} else if ((playerHuman == 2 && playerComputer == 3)) {
+    console.log("Computer picked scissor, you lose!")
+} else if ((playerHuman == 3 && playerComputer == 1)) {
+    console.log("Computer picked rock, you lose!") 
+} else if ((playerHuman == 3 && playerComputer == 2)) {
+console.log("Computer picked rock, you win!")
+} else {
+    console.log ("Draw!")
+} 
+}
+*/
+</script>
+
+</html>

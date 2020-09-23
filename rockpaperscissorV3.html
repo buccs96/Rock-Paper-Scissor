@@ -1,0 +1,188 @@
+<html>
+
+<script>
+
+
+/* This function lets the PC pick randomly from three elements of the array and stores the value*/
+    function computerSelection (){
+            
+            let optionsPossible = ["rock" , "paper" , "scissor"];
+            optionsPossible[0] = "rock";
+            optionsPossible[1] = "paper";
+            optionsPossible[2] = "scissor";  
+            let optionComputer = optionsPossible[Math.floor(Math.random()*3)];
+            return optionComputer;
+            }
+
+/* This function stores the value of the choice you picked*/
+    function playerSelection () {
+            let pickedPlayer = prompt("Pick between: rock, scissor and paper");
+            let x = "rock";
+            let y = "paper";
+            let z = "scissor"
+            if ((pickedPlayer == "rock")) {
+                pickedPlayer = x;
+            } else if ((pickedPlayer == "scissor")) {
+                pickedPlayer = z;
+            } else if ((pickedPlayer == "paper")) {
+                pickedPlayer = y;
+            } else {
+                alert("Choose between: rock, scissor, paper");
+            }
+            return pickedPlayer;
+}
+
+
+let playerHuman = playerSelection();
+let playerComputer = computerSelection(); 
+
+/* Used a switch case */
+
+
+
+let win = 0;
+let lose = 0;
+let draw = 0; 
+
+function oneRound(playerHuman, playerComputer){
+
+
+switch(playerHuman) {
+    case "rock":
+        if ((playerComputer == "rock" )) {
+            draw++;
+            return("Draw!")
+            } else if ((playerComputer == "paper")) {
+            lose++;
+            return("Computer picked " + playerComputer +" , you lose!")
+            } else {
+            win++;
+            return("Computer picked " + playerComputer +" , you win!")
+            }
+            break;
+    case "paper":
+        if ((playerComputer == "paper" )) {
+            draw++;
+            return("Draw!")
+            } else if ((playerComputer == "scissor")) {
+            lose++;
+            return("Computer picked " + playerComputer +" , you lose!")
+            } else {
+            win++;
+            return("Computer picked " + playerComputer +" , you win!")
+            }
+            break;
+    case "scissor":
+        if ((playerComputer == "scissor" )) {
+            draw++;
+            return("Draw!")
+            } else if ((playerComputer == "rock")) {
+            lose++;
+            return("Computer picked " + playerComputer +" , you lose!")
+            } else {
+            win++;
+            return("Computer picked " + playerComputer +" , you win!")
+            }
+            break;
+            }
+
+}
+
+
+
+function game() {
+
+    for (let round = 0 ; round < 5 ; round++){
+        console.log(oneRound(playerSelection(), computerSelection()));   
+    }
+    if ((win > lose)) {
+        console.log("Human wins!")
+        } else if ((win < lose)) {
+        console.log("PC wins!")
+        } else if ((win = lose)) {
+        console.log("Draw");
+        }
+}
+
+game()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+switch(playerHuman) {
+    case "rock":
+        if ((playerComputer == "rock" )) {
+            console.log("Draw")
+        } else if ((playerComputer == "paper")) {
+            console.log("PC picked " + playerComputer + " , computer wins")
+        } else {
+            console.log("PC picked " + playerComputer + ", Human wins")
+        }
+        break;
+    case "paper":
+    if ((playerComputer == "paper" )) {
+            console.log("Draw")
+        } else if ((playerComputer == "scissor")) {
+            console.log("PC picked " + playerComputer+ " , computer wins")
+        } else {
+            console.log("PC picked " + playerComputer + ", Human wins")
+        }
+        break;
+    case "scissor":
+    if ((playerComputer == "scissor" )) {
+            console.log("Draw")
+        } else if ((playerComputer == "rock")) {
+            console.log("PC picked " + playerComputer + " , computer wins")
+        } else {
+            console.log("PC picked " + playerComputer + ", Human wins")
+        }
+        break;
+}
+
+*/
+</script>
+
+</html>
